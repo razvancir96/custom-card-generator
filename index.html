@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Sirluggia Card Generator</h1>
+        <p>Make your dream card!</p>
+        <div class="sirluggia-card">
+            <img src="https://i2.wp.com/quidtree.com/wp-content/uploads/2020/01/placeholder.png?fit=1200%2C800&ssl=1" alt="placeholder">
+            <h5 class="title">Lorem ipsum</h5>
+            <p class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio non nulla animi. Dignissimos aspernatur eligendi repellat. Laboriosam, beatae adipisci porro distinctio facere molestiae praesentium sequi voluptatum soluta. Illo, repellendus obcaecati!</p>
+        </div>
+        <div class="edit-section">
+            <h2>Edit dimensions:</h2>
+            <label for="edit-weight">Weight</label>
+            <input type="text" id="edit-weight">
+            <label for="edit-height-checkbox">Height</label>
+            <label for="edit-height-checkbox">Automatically set</label>
+            <input type="checkbox" id="edit-height-checkbox" checked>
+            <input type="text" id="edit-hieght-input" disabled>
+            
+            <h2>Edit colors:</h2>
+            <label for="edit-text-color">Text Color</label>
+            <input type="color" id="edit-text-color">
+            <label for="edit-background-color">Background Color</label>
+            <input type="color" id="edit-background-color">
+            <label for="edit-shadow-color">Shadow Color</label>
+            <input type="color" id="edit-shadow-color">
+
+            <h2>Edit content:</h2>
+            <label for="edit-image-checkbox">Image</label>
+            <label for="edit-image-checkbox">Display image</label>
+            <input type="checkbox" id="edit-image-checkbox" checked>
+            <input type="text" id="edit-image-input" disabled>
+            <label for="edit-tile-checkbox">Title</label>
+            <label for="edit-title-checkbox">Display title</label>
+            <input type="checkbox" id="edit-title-checkbox" checked>
+            <input type="text" id="edit-title-input" disabled>
+            <label for="edit-description-checkbox">Description</label>
+            <label for="edit-description-checkbox">Display description</label>
+            <input type="checkbox" id="edit-description-checkbox" checked>
+            <input type="text" id="edit-description-input" disabled>
+        </div>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>
