@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    min-height: 100vh;
+    color: #02120C;
+    /* TODO: IVORY -> update color palette */
+    background-color: #FBFFF1;
+}
+
+header {
+    background-color: #034F2E;
+    /* TODO: IVORY -> update color palette */
+    color: #FBFFF1;
+    padding: 2.5rem;
+    box-shadow: 0px 2px 8px 2px #cccccc;
+}
+
+header .site-title {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.site-title, .site-description {
+    text-align: center;
+}
+
+.site-description {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2.5rem 1.5rem 2.5rem 1.5rem;
+}
+
+.content-wrapper h2 {
+    margin: 0 0 1.5rem 0;
+}
+
+.card-wrapper {
+    margin: 0 1.5rem 2.5rem 1.5rem;
+}
+
+.card-wrapper button {
+    background-color: #048B57;
+    color: #ffffff;
+    border-color: #048B57;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0px 3px 7px 2px #cccccc !important;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 1rem;
+    margin-top: 1.5rem;
+}
+
+.card-wrapper button:hover {
+    cursor: pointer;
+}
+
+.sirluggia-card {
+    width: 450px;
+    box-shadow: 0px 3px 7px 2px #cccccc;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+.sirluggia-card .image-wrapper {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.sirluggia-card .image-wrapper {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sirluggia-card img {
+    width: 100%;
+    height: auto;
+}
+
+.sirluggia-card .text-wrapper {
+    padding: 1rem;
+}
+
+.sirluggia-card .text-wrapper h5 {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+}
+
+.edit-section {
+    display: flex;
+    flex-direction: column;
+    margin: 0 1.5rem;
+}
+
+.edit-subsection {
+    min-width: 250px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    box-shadow: 0px 3px 7px 2px #cccccc;
+    padding: 0 1rem 1rem 1rem;
+}
+
+.edit-subsection + .edit-subsection {
+    margin-top: 1.5rem;
+}
+
+.edit-subsection .edit-section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.edit-subsection h2 {
+    margin: 1rem 0;
+    font-size: 20px;
+}
+
+.edit-subsection .input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-subsection .checkbox-group label{
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
+.edit-subsection .input-color-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit-subsection-property {
+    padding: 0.5rem 0;
+}
+
+.edit-subsection-property + .edit-subsection-property{
+    border-top: solid 1px grey;
+}
+
+/* TODO: Think about: different shades of black for big bold texts */
+/* h2 {
+    color: #292929 !important;
+} */
