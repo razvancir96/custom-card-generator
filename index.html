@@ -31,81 +31,90 @@
         <div class="edit-section">
             <h2>Edit your work</h2>
             <div class="edit-subsection">
-                <div class="edit-section-title">
+                <div class="edit-section-title edit-dimensions-title">
                     <h3>Edit dimensions</h3>
-                    <i class="material-icons">arrow_drop_down</i>
+                    <i class="material-icons active">arrow_drop_down</i>
+                    <i class="material-icons">arrow_drop_up</i>
                 </div>
-                <div class="input-group edit-subsection-property">
-                    <label for="edit-weight">Weight:</label>
-                    <input type="text" id="edit-weight">
-                </div>
-                <div class="edit-subsection-property">
-                    <div class="input-group">
-                        <label for="edit-height">Height:</label>
-                        <input type="text" id="edit-hieght" disabled>
+                <div class="edit-dimensions-content active">
+                    <div class="input-group edit-subsection-property">
+                        <label for="edit-weight">Weight:</label>
+                        <input type="text" id="edit-weight">
                     </div>
-                    <div class="checkbox-group">
-                        <label for="edit-height-checkbox">Automatically set</label>
-                        <input type="checkbox" id="edit-height-checkbox" checked>
+                    <div class="edit-subsection-property">
+                        <div class="input-group">
+                            <label for="edit-height">Height:</label>
+                            <input type="text" id="edit-hieght" disabled>
+                        </div>
+                        <div class="checkbox-group">
+                            <label for="edit-height-checkbox">Automatically set</label>
+                            <input type="checkbox" id="edit-height-checkbox" checked>
+                        </div>
                     </div>
                 </div>
             </div>
             
             <div class="edit-subsection">
-                <div class="edit-section-title">
+                <div class="edit-section-title edit-colors-title">
                     <h3>Edit colors</h3>
                     <i class="material-icons">arrow_drop_down</i>
+                    <i class="material-icons active">arrow_drop_up</i>
                 </div>
-                <div class="input-color-group edit-subsection-property">
-                    <label for="edit-text-color">Text Color</label>
-                    <input type="color" id="edit-text-color">
-                </div>
-                <div class="input-color-group edit-subsection-property">
-                    <label for="edit-background-color">Background Color</label>
-                    <input type="color" id="edit-background-color">
-                </div>
-                <div class="input-color-group edit-subsection-property">
-                    <label for="edit-shadow-color">Shadow Color</label>
-                    <input type="color" id="edit-shadow-color">
+                <div class="edit-colors-content edit-colors-content">
+                    <div class="input-color-group edit-subsection-property">
+                        <label for="edit-text-color">Text Color</label>
+                        <input type="color" id="edit-text-color">
+                    </div>
+                    <div class="input-color-group edit-subsection-property">
+                        <label for="edit-background-color">Background Color</label>
+                        <input type="color" id="edit-background-color">
+                    </div>
+                    <div class="input-color-group edit-subsection-property">
+                        <label for="edit-shadow-color">Shadow Color</label>
+                        <input type="color" id="edit-shadow-color">
+                    </div>
                 </div>
             </div>
 
             <div class="edit-subsection">
-                <div class="edit-section-title">
+                <div class="edit-section-title edit-content-title">
                     <h3>Edit content:</h3>
                     <i class="material-icons">arrow_drop_down</i>
+                    <i class="material-icons active">arrow_drop_up</i>
                 </div>
 
-                <div class="edit-subsection-property">
-                    <div class="input-group">
-                        <label for="edit-image">Image:</label>
-                        <input type="text" id="edit-image">
+                <div class="edit-content-content">
+                    <div class="edit-subsection-property">
+                        <div class="input-group">
+                            <label for="edit-image">Image:</label>
+                            <input type="text" id="edit-image">
+                        </div>
+                        <div class="checkbox-group">
+                            <label for="edit-image-checkbox">Display image</label>
+                            <input type="checkbox" id="edit-image-checkbox" checked>
+                        </div>
                     </div>
-                    <div class="checkbox-group">
-                        <label for="edit-image-checkbox">Display image</label>
-                        <input type="checkbox" id="edit-image-checkbox" checked>
+        
+                    <div class="edit-subsection-property">
+                        <div class="input-group">
+                            <label for="edit-tile">Title:</label>
+                            <input type="text" id="edit-title">
+                        </div>
+                        <div class="checkbox-group">
+                            <label for="edit-title-checkbox">Display title</label>
+                            <input type="checkbox" id="edit-title-checkbox" checked>
+                        </div>
                     </div>
-                </div>
-    
-                <div class="edit-subsection-property">
-                    <div class="input-group">
-                        <label for="edit-tile">Title:</label>
-                        <input type="text" id="edit-title">
-                    </div>
-                    <div class="checkbox-group">
-                        <label for="edit-title-checkbox">Display title</label>
-                        <input type="checkbox" id="edit-title-checkbox" checked>
-                    </div>
-                </div>
-    
-                <div class="edit-subsection-property">
-                    <div class="input-group">
-                        <label for="edit-description">Description:</label>
-                        <input type="text" id="edit-description">
-                    </div>
-                    <div class="checkbox-group">
-                        <label for="edit-description-checkbox">Display description</label>
-                        <input type="checkbox" id="edit-description-checkbox" checked>
+        
+                    <div class="edit-subsection-property">
+                        <div class="input-group">
+                            <label for="edit-description">Description:</label>
+                            <input type="text" id="edit-description">
+                        </div>
+                        <div class="checkbox-group">
+                            <label for="edit-description-checkbox">Display description</label>
+                            <input type="checkbox" id="edit-description-checkbox" checked>
+                        </div>
                     </div>
                 </div>
             </div>

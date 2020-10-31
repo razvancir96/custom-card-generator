@@ -53,7 +53,7 @@ header .site-title {
     color: #ffffff;
     border-color: #048B57;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     box-shadow: 0px 3px 7px 2px #cccccc !important;
     font-size: 1rem;
     font-weight: 700;
@@ -113,7 +113,7 @@ header .site-title {
     border: 1px solid #cccccc;
     border-radius: 5px;
     box-shadow: 0px 3px 7px 2px #cccccc;
-    padding: 0 1rem 1rem 1rem;
+    padding: 1rem;
 }
 
 .edit-subsection + .edit-subsection {
@@ -129,6 +129,10 @@ header .site-title {
 .edit-subsection h2 {
     margin: 1rem 0;
     font-size: 20px;
+}
+
+.edit-subsection h3 {
+    margin: 0;
 }
 
 .edit-subsection .input-group {
@@ -150,11 +154,48 @@ header .site-title {
     padding: 0.5rem 0;
 }
 
-.edit-subsection-property + .edit-subsection-property{
-    border-top: solid 1px grey;
+.edit-subsection input[type="text"] {
+    padding: 0.25rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #02120C;
+}
+
+.edit-subsection input[type="color"] {
+    border-radius: 5px;
+}
+
+.edit-subsection input[type="text"]:focus {
+    outline: #048B57 auto 1px;
+}
+
+.edit-subsection input:disabled {
+    border: 1px solid #cccccc;
 }
 
 /* TODO: Think about: different shades of black for big bold texts */
 /* h2 {
     color: #292929 !important;
 } */
+
+.material-icons {
+    display: none;
+}
+
+.material-icons.active {
+    display: block;
+}
+
+.edit-dimensions-content, .edit-colors-content, .edit-content-content {
+    display: none;
+    margin-top: 0;
+}
+
+.edit-dimensions-content.active, .edit-colors-content.active, .edit-content-content.active {
+    display: block;
+    margin-top: 1rem;
+}
+
+.edit-section-title {
+    cursor: pointer;
+}
