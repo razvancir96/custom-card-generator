@@ -65,19 +65,19 @@ header .site-title {
     cursor: pointer;
 }
 
-.sirluggia-card {
+.card {
     width: 450px;
     box-shadow: 0px 3px 7px 2px #cccccc;
     background-color: #ffffff;
     border-radius: 5px;
 }
 
-.sirluggia-card .image-wrapper {
+.card .image-wrapper {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
 
-.sirluggia-card .image-wrapper {
+.card .image-wrapper {
     width: 100%;
     height: 200px;
     overflow: hidden;
@@ -87,16 +87,16 @@ header .site-title {
     justify-content: center;
 }
 
-.sirluggia-card img {
+.card img {
     width: 100%;
     height: auto;
 }
 
-.sirluggia-card .text-wrapper {
+.card .text-wrapper {
     padding: 1rem;
 }
 
-.sirluggia-card .text-wrapper h5 {
+.card .text-wrapper h5 {
     font-size: 2rem;
     margin: 0.5rem 0;
 }
@@ -154,7 +154,7 @@ header .site-title {
     padding: 0.5rem 0;
 }
 
-.edit-subsection input[type="text"] {
+.edit-subsection input[type="text"], .edit-subsection textarea {
     padding: 0.25rem;
     font-size: 1rem;
     border-radius: 5px;
@@ -163,14 +163,25 @@ header .site-title {
 
 .edit-subsection input[type="color"] {
     border-radius: 5px;
+    background-color: #ffffff;
 }
 
-.edit-subsection input[type="text"]:focus {
+.edit-subsection input:focus, .edit-subsection textarea  {
     outline: #048B57 auto 1px;
 }
 
-.edit-subsection input:disabled {
+.edit-subsection input:disabled, .edit-subsection textarea  {
     border: 1px solid #cccccc;
+}
+
+.edit-subsection textarea {
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: inherit;
+    color: inherit;
+    overflow: auto;
+    resize: none;
+    height: 120px;
 }
 
 /* TODO: Think about: different shades of black for big bold texts */
