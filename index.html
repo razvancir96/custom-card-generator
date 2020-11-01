@@ -38,18 +38,26 @@
                 </div>
                 <div class="edit-dimensions-content active">
                     <div class="input-group edit-subsection-property">
-                        <label for="edit-weight">Width:</label>
-                        <input type="text" id="edit-weight">
+                        <label for="edit-width">Width (px):</label>
+                        <input type="text" id="edit-width">
+                    </div>
+                    <div class="width-warning">
+                        <span class="material-icons warning-icon">warning</span>
+                        <p>Max. width is 1200!</p>
                     </div>
                     <div class="edit-subsection-property">
                         <div class="input-group">
-                            <label for="edit-height">Height:</label>
+                            <label for="edit-height">Height (px):</label>
                             <input type="text" id="edit-height" disabled>
                         </div>
                         <div class="checkbox-group">
-                            <label for="edit-height-checkbox">Automatically set</label>
+                            <label for="edit-height-checkbox">Manually set</label>
                             <input type="checkbox" id="edit-height-checkbox">
                         </div>
+                    </div>
+                    <div class="height-warning">
+                        <span class="material-icons warning-icon">warning</span>
+                        <p>Max height exceeded!</p>
                     </div>
                 </div>
             </div>
@@ -86,7 +94,7 @@
                 <div class="edit-content-content">
                     <div class="edit-subsection-property">
                         <div class="input-group">
-                            <label for="edit-image">Image:</label>
+                            <label for="edit-image">Image (link):</label>
                             <input type="text" id="edit-image">
                         </div>
                         <div class="checkbox-group">

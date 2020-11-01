@@ -70,6 +70,7 @@ header .site-title {
     box-shadow: 0px 3px 7px 2px #cccccc;
     background-color: #ffffff;
     border-radius: 5px;
+    overflow: hidden;
 }
 
 .card .image-wrapper {
@@ -166,11 +167,11 @@ header .site-title {
     background-color: #ffffff;
 }
 
-.edit-subsection input:focus, .edit-subsection textarea  {
+.edit-subsection input:focus, .edit-subsection textarea:focus  {
     outline: #048B57 auto 1px;
 }
 
-.edit-subsection input:disabled, .edit-subsection textarea  {
+.edit-subsection input:disabled, .edit-subsection textarea:disabled {
     border: 1px solid #cccccc;
 }
 
@@ -209,4 +210,25 @@ header .site-title {
 
 .edit-section-title {
     cursor: pointer;
+}
+
+.width-warning, .height-warning {
+    display: none;
+    align-items: center;
+    background-color: #faf7cf;
+    border-radius: 5px;
+    padding: 0.25rem;
+}
+
+.warning-icon {
+    display: block;
+    color: #9c9217;
+    font-size: 1rem;
+    margin-right: 0.25rem;
+}
+
+.width-warning p, .height-warning p {
+    margin: 0.25rem 0;
+    font-size: 0.875rem;
+    font-weight: 700;
 }
