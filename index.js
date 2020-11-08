@@ -1,7 +1,3 @@
-const editDimensionsTitle = document.querySelector('.edit-dimensions-title');
-const editColorsTitile = document.querySelector('.edit-colors-title');
-const editContentTitle = document.querySelector('.edit-content-title');
-
 // Intially we had 3 repetitive pieces of code, so we made this function.
 function handleSectionTitleClick(titleDomElement, sectionName) {
     titleDomElement.addEventListener('click', function() {
@@ -17,84 +13,6 @@ function handleSectionTitleClick(titleDomElement, sectionName) {
 handleSectionTitleClick(editDimensionsTitle, 'dimensions');
 handleSectionTitleClick(editColorsTitile, 'colors');
 handleSectionTitleClick(editContentTitle, 'content');
-
-const card = document.querySelector('.card');
-const widthInput = document.querySelector('#edit-width');
-const heightInput = document.querySelector('#edit-height');
-
-function addDimensionsDefaultValues() {
-    const cardWidth = card.offsetWidth;
-    widthInput.value = cardWidth;
-    const cardHeight = card.offsetHeight;
-    heightInput.value = cardHeight;
-}
-
-// Give the browser time to calculate height
-setTimeout(() => {
-    addDimensionsDefaultValues()
-}, 100);
-
-function componentToHex(c) {
-    var hex = c.toString(16);
-    return hex.length == 1 ? "0" + hex : hex;
-}
-function rgbToHex(r, g, b) {
-    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-}
-function rgbStringToHex(rgbString) {
-    const rgbNumbers = rgbString.substring(4, rgbString.length - 1).split(', ');
-    const red = Number(rgbNumbers[0]);
-    const green = Number(rgbNumbers[1]);
-    const blue = Number(rgbNumbers[2]);
-    const shadowHex = rgbToHex(red, green, blue);
-
-    return shadowHex;
-}
-
-const textInput = document.querySelector('#edit-text-color');
-const backgroundInput = document.querySelector('#edit-background-color');
-const shadowInput = document.querySelector('#edit-shadow-color');
-
-function addColorDefaultValues() {
-    const textColorRgb = getComputedStyle(card).getPropertyValue('color');
-    const textColorHex = rgbStringToHex(textColorRgb);
-    const backgroundColorRgb = getComputedStyle(card).getPropertyValue('background-color');
-    const backgroundColorHex = rgbStringToHex(backgroundColorRgb);
-    const shadow = getComputedStyle(card).getPropertyValue('box-shadow');
-    const shadowRgb = shadow.split(') ')[0] + ')';
-    const shadowHex = rgbStringToHex(shadowRgb);
-
-    textInput.value = textColorHex;
-    backgroundInput.value = backgroundColorHex;
-    shadowInput.value = shadowHex;
-}
-
-addColorDefaultValues()
-
-const image = document.querySelector('.card img');
-const imageWrapper = document.querySelector('.card .image-wrapper');
-const title = document.querySelector('.card .title');
-const description = document.querySelector('.card .description');
-const imageInput = document.querySelector('#edit-image');
-const titleInput = document.querySelector('#edit-title');
-const descriptionInput = document.querySelector('#edit-description');
-
-function addContentDefaultValues() {
-    imageInput.value = image.src;
-    titleInput.value = title.textContent;
-    const descriptionConent = document.createTextNode(description.textContent);
-    descriptionInput.appendChild(descriptionConent);
-}
-
-addContentDefaultValues();
-
-const heightCheckbox = document.querySelector('#edit-height-checkbox');
-const titleCheckbox = document.querySelector('#edit-title-checkbox');
-const descriptionCheckbox = document.querySelector('#edit-description-checkbox');
-const imageCheckbox = document.querySelector('#edit-image-checkbox');
-
-const widthWarning = document.querySelector('.width-warning');
-const heightWarning = document.querySelector('.height-warning');
 
 function checkboxToggle(checkboxElement, inputName, doModifyCard, cardModifiedElement) {
     checkboxElement.addEventListener('input', function (event) {
@@ -117,6 +35,10 @@ function checkboxToggle(checkboxElement, inputName, doModifyCard, cardModifiedEl
                 card.style.height = 'auto';
                 heightInput.value = card.offsetHeight;
                 heightWarning.style.display = 'none';
+                modifyLSItem('heightCheckbox', 'false');
+                modifyLSItem('height', card.offsetHeight);
+            } else {
+                modifyLSItem('heightCheckbox', 'true');
             }
         }
     })
@@ -183,15 +105,23 @@ function modifyCardStyle(inputField, modifiedProperty) {
 
             widthDebounceTimeoutId = setTimeout(() => {
                 card.style[modifiedProperty] = inputValue;
+                modifyLSItem(modifiedProperty, parseInt(inputValue));
             }, 1000);
         } else if (modifiedProperty === 'height') {
             clearTimeout(heightDebounceTimeoutId);
 
             heightDebounceTimeoutId = setTimeout(() => {
                 card.style[modifiedProperty] = inputValue;
+                modifyLSItem(modifiedProperty, parseInt(inputValue));
             }, 1000);
         } else {
             card.style[modifiedProperty] = inputValue;
+            if ( modifiedProperty === 'boxShadow') {
+                const shadow = getComputedStyle(card).getPropertyValue('box-shadow');
+                modifyLSItem(modifiedProperty, shadow);
+            } else {
+                modifyLSItem(modifiedProperty, inputValue);
+            }
         }
     });
 }
@@ -202,7 +132,7 @@ modifyCardStyle(textInput, 'color');
 modifyCardStyle(backgroundInput, 'backgroundColor');
 modifyCardStyle(shadowInput, 'boxShadow');
 
-function modifyCardContent(inputField, cardElement) {
+function modifyCardContent(inputField, cardElement, LSProperty) {
     inputField.addEventListener('input', function(event) {
         let inputValue = event.target.value;
         if (cardElement.src !== undefined) {
@@ -210,9 +140,10 @@ function modifyCardContent(inputField, cardElement) {
         } else {
             cardElement.textContent = inputValue;
         }
+        modifyLSItem(LSProperty, inputValue);
     })
 }
 
-modifyCardContent(imageInput, image);
-modifyCardContent(titleInput, title);
-modifyCardContent(descriptionInput, description);
+modifyCardContent(imageInput, image, 'image');
+modifyCardContent(titleInput, title, 'title');
+modifyCardContent(descriptionInput, description, 'description');
