@@ -85,6 +85,10 @@ header .site-title {
     margin: 0.5rem 0;
 }
 
+.card .description {
+    margin-bottom: 0;
+}
+
 .edit-section {
     display: flex;
     flex-direction: column;
@@ -214,4 +218,24 @@ header .site-title {
     margin: 0.25rem 0;
     font-size: 0.875rem;
     font-weight: 700;
+}
+
+@media only screen and (max-width: 600px) {
+    .content-wrapper {
+        flex-direction: column;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+    }
+
+    .card {
+        width: 300px;
+    }
+
+    .card .text-wrapper h5 {
+        font-size: 1.5rem;
+    }
+
+    .card .description {
+        font-size: 0.875rem;
+    }
 }
