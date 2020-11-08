@@ -225,10 +225,12 @@ header .site-title {
         flex-direction: column;
         justify-content: flex-start;
         flex-wrap: nowrap;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .card {
-        width: 300px;
+        width: 100%;
     }
 
     .card .text-wrapper h5 {
@@ -237,5 +239,9 @@ header .site-title {
 
     .card .description {
         font-size: 0.875rem;
+    }
+
+    .card .image-wrapper {
+        height: 170px;
     }
 }
