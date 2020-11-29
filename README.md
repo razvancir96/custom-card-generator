@@ -1,4 +1,4 @@
-# card-generator
+# custom-card-generator
 JS fundamentals project
 
 ## Demo
