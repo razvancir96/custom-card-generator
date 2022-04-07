@@ -1,5 +1,5 @@
 # custom-card-generator
-JS fundamentals project
+Built a card editor, using plain JavaScript.
 
 ## Demo
 https://custom-card-generator.netlify.app/
